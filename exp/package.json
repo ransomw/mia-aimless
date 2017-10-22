@@ -1,0 +1,21 @@
+{
+  "name": "mia-stim",
+  "version": "0.0.1",
+  "description": "motion-induced aftereffect stimuli",
+  "dependencies": {
+    "fabric": "^1.7.18",
+    "ramda": "^0.24.1"
+  },
+  "devDependencies": {
+    "browserify": "^14.4.0",
+    "watchify": "^3.9.0",
+    "derequire": "^2.0.6"
+  },
+  "scripts": {
+    "build": "browserify src/js/mia_stim.js --standalone MiaStim | derequire > target/mia-stim-bundle.js",
+    "build:cts": "watchify src/js/mia_stim.js --transform derequire --standalone MiaStim -o target/mia-stim-bundle.js"
+  },
+  "engines": {
+    "node": "8.7.0"
+  }
+}
